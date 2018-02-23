@@ -1,0 +1,8 @@
+[user]
+USERNAME =
+PASSWORD =
+
+[urls]
+BASE = https://booking.creancentre.com/calendar/
+LOGIN = login.php
+SCRAPE = day.php?user=_NUC_Boardroom
