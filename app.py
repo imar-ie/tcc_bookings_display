@@ -1,23 +1,21 @@
-import scrape
-
-import datetime
-
-import requests
-
 from flask import Flask, render_template
 
+from datetime import datetime
+
+from scrape import scrape
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
 
-    table =  scrape.main()
+    table =  scrape()
 
-    date = datetime.date.today().strftime("%A %d %B")
-
-    return render_template('page.html', name=table, date=date)
-
+    date = datetime.now().strftime("%A %d %B")
+    
+    update_time = datetime.now().strftime("%H:%M")
+    
+    return render_template('page.html', table=table, date=date, update_time=update_time)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, use_reloader=True)

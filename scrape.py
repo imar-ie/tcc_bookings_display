@@ -9,20 +9,21 @@ import requests
 
 import configparser
 
-from lxml import html, etree
+from os import environ
 
+from lxml import html, etree
 
 config = configparser.ConfigParser()
 
 config.read('config.ini')
 
-USERNAME = config.get('user', 'USERNAME')
-PASSWORD = config.get('user', 'PASSWORD')
+USERNAME = environ.get('user')
+PASSWORD = environ.get('password')
 
 LOGIN_URL = config.get('urls', 'BASE') + config.get('urls', 'LOGIN')
 SCRAPE_URL = config.get('urls', 'BASE') + config.get('urls', 'SCRAPE')
 
-def main():
+def scrape():
 
     print(' * Fetching bookings...')
 
@@ -51,4 +52,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    scrape()
