@@ -12,13 +12,12 @@ name = "pypi"
 [packages]
 
 flask = "*"
-flask-sqlalchemy = "*"
 "psycopg2" = "*"
 gunicorn = "*"
 scrape = "*"
 requests = "*"
 datetime = "*"
-
+pytz = "*"
 
 [requires]
 
