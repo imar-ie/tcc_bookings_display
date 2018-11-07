@@ -47,8 +47,15 @@ def scrape():
 
     # Select table
     table = tree.xpath("//table[@class='glance']")
-
-    return etree.tostring(table[0], pretty_print=True, encoding='unicode')
+    
+    if table:
+        
+        return etree.tostring(table[0], pretty_print=True, encoding='unicode')
+    
+    else:
+        
+        return '<div class="error">Error with booking system <br>:(</div>'
+        
 
 
 if __name__ == '__main__':

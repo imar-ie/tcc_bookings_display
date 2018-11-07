@@ -115,3 +115,12 @@ th {
 .made-with-love a:hover {
   text-decoration: underline;
 }
+
+.error{
+    color: #fff;
+    padding:100px;
+    text-align: center;
+    background-color: rgba(236,100,75 , 1);
+    background: -webkit-linear-gradient(left, #f03434, #EC644B );
+    background: linear-gradient(to right, #f03434, #EC644B);
+}
